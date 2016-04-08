@@ -1,10 +1,3 @@
----
-title: "report"
-author: "huangjiushi"
-date: '2016-03-28'
-output: pdf_document
----
-
 # IS4250 Health Care Analysis Report
  
  
@@ -45,46 +38,29 @@ The second data set indicates India data set which has 583 liver patient records
 Specific tables of data sets are shown like in the below:
 
 
-Attribute
-Type
-Mcv
-Integer
-Alkphos
-Integer
-SGPT
-Integer
-SGOT
-Integer
-Gammagt
-Real Number
-Drinks
-Real Number
-
+Attribute |  Type
+----------|--------------
+Mcv       |  Integer
+Alkphos   |  Integer
+SGPT      |  Integer
+SGOT      |  Integer
+Gammagt   |  Real Number
+Drinks    |  Real Number
  Table 1: UCI Liver data set specifications
 
 
-Attribute
-Type
-Gender
-Alphabetic
-Age
-Real Number
-Total_bilirubin
-Real Number
-Direct_Bilirubin
-Real Number
-Total_Protiens
-Real Number
-Albumin
-Real Number
-A/G ratio
-Real Number
-SGPT
-Integer
-SGOT
-Integer
-Alkphos
-Integer
+Attribute        |  Type
+-----------------|---------------
+Gender           |  Alphabetic
+Age              |  Real Number
+Total_bilirubin  |  Real Number
+Direct_Bilirubin |  Real Number
+Total_Protiens   |  Real Number
+Albumin          |  Real Number
+A/G ratio        |  Real Number
+SGPT             |  Integer
+SGOT             |  Integer
+Alkphos          |  Integer
  Table 2: India Liver data set specifications
 
 
@@ -140,31 +116,16 @@ Three common attributes, SGOT, SGPT and Alkphos, exist between the US data set a
 
 Three experiments will be conducted on three different samples. For each experiment, 7 comparisons will be tested to show that the significant differences exist. The first three comparisons will examine whether significant differences on individual common attribute exist between Indian patients and the US patients, i.e. comparison on SGOT, comparison on SGPT, and comparison on Alkphos. The next three comparisons will examine whether significant differences exist on the combination of two common attributes between India patients and US patients, i.e. comparison on SGOT and SGPT, comparison on SGOT and Alkphos, and comparison on SGPT and Alkphos. The last comparison will examine whether significant differences on the combination of all the three common variables exist between Indian patients and the US patients, i.e. comparison on SGOT, SGPT, and Alkphos. The first three comparisons will be tested by ANOVA because only the difference of data sets on single variable will be examined. MANOVA will be used for the rest of the comparisons since the difference of data sets on multiple variables is expected to be examined.
 
-Comparison Number
-Dependent Variables
-Experiment Methodology
-1
-SGOT
-ANOVA
-2
-SGPT
-ANOVA
-3
-Alkphos
-ANOVA
-4
-Alkphos & SGPT
-MANOVA
-5
-Alkphos & SGOT
-MANOVA
-6
-SGPT & SGOT
-MANOVA
-7
-Alkphos, SGOT & SGPT
-MANOVA
-Table 3: Experiment Comparisons Specifications
+Comparison Number | Dependent Variables | Experiment Methodology
+------------------|---------------------|-----------------------
+1                 |SGOT                 |ANOVA
+2                 |SGPT                 |ANOVA
+3                 |Alkphos              |ANOVA
+4                 |Alkphos & SGPT       |MANOVA
+5                 |Alkphos & SGOT       |MANOVA
+6                 |SGPT & SGOT          |MANOVA
+7                 |Alkphos, SGOT & SGPT |MANOVA
+  Table 3: Experiment Comparisons Specifications
 
 The comparison on Alkphos in the first experiment will be taken as an example to elaborate ANOVA and the comparison on the combination of Alkphos and SGPT as an example to elaborate MANOVA. The rest of the comparisons in the first experiments as well as experiment 2 and 3 will be briefly discussed.
 
@@ -311,13 +272,24 @@ In this study, One-way Analysis of Variance (ANOVA) and Multivariate Analysis of
 
 ## References:
 
-[1]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu,  “ A Critical Comparative Study of Liver Patients from USA and INDIA: An Exploratory Analysis(May, 2012)”,  IJCSI International Journal of Computer Science Issues
+[1]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu,  " A Critical Comparative Study of Liver Patients from USA and INDIA: An Exploratory Analysis(May, 2012)",  IJCSI International Journal of Computer Science Issues
 
-[2]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu, “A Critical Study of Selected Classification Algorithms for Liver Disease Diagnosis.(May, 2011)”, IJCSI International Journal of Computer Science Issues
+[2]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu, "A Critical Study of Selected Classification Algorithms for Liver Disease Diagnosis.(May, 2011)", IJCSI International Journal of Computer Science Issues
 
-[3]. Bendi Venkata Ramana, M.Surendra Prasad Babu, B.R.Sarath Kumar, “New Automatic Diagnosis of Liver Status Using Bayesian Classification”(Nov, 2010), IEEE International Conference on Intelligent Network and Computing
+[3]. Bendi Venkata Ramana, M.Surendra Prasad Babu, B.R.Sarath Kumar, "New Automatic Diagnosis of Liver Status Using Bayesian Classification"(Nov, 2010), IEEE International Conference on Intelligent Network and Computing
 
-[4]. BUPA Liver Disorders Data Set. UCI Repository of Machine Learning Databases， Retrived from “https://archive.ics.uci.edu/ml/datasets/Liver+Disorders”. 
+[4]. BUPA Liver Disorders Data Set. UCI Repository of Machine Learning Databases, Retrived from "https://archive.ics.uci.edu/ml/datasets/Liver+Disorders". 
+[5]. F-Distribution Tables. (n.d.). Retrieved April 05, 2016, from "http://www.socr.ucla.edu/applets.dir/f_table.html"
+
+[6]. (n.d.). Retrieved April 05, 2016, from https://en.wikipedia.org/wiki/F-test 
+
+[7]. S. (2012). How To Calculate and Understand Analysis of Variance (ANOVA) F Test. Retrieved April 05, 2016, from "https://www.youtube.com/watch?v=-yQb_ZJnFXw".
+
+[8]. Statistical Soup: ANOVA, ANCOVA, MANOVA, & MANCOVA. (n.d.). Retrieved April 05, 2016, from "http://www.statsmakemecry.com/smmctheblog/stats-soup-anova-ancova-manova-mancova".
+
+[9]. Zaiontz, C. (n.d.). MANOVA Basic Concepts. Retrieved April 05, 2016, from "http://www.real-statistics.com/multivariate-statistics/multivariate-analysis-of-variance-manova/manova-basic-concepts/"
+
+[10]. 13.3 - Test Statistics for MANOVA. (n.d.). Retrieved April 05, 2016, from "https://onlinecourses.science.psu.edu/stat505/node/163"
 
 ## Appendix:
 
@@ -629,5 +601,3 @@ summary(Exp3_Manova4, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp3_Manova4, test="Roy", intercept = TRUE)
 
 ```
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true,processEnvironments: false, inlineMath: [ ['$','$'] ],displayMath: [['$$','$$'] ] },asciimath2jax: {delimiters: [ ['$','$'] ] }, "HTML-CSS": {minScaleAdjust: 125 } });</script>
