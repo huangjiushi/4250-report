@@ -311,13 +311,24 @@ In this study, One-way Analysis of Variance (ANOVA) and Multivariate Analysis of
 
 ## References:
 
-[1]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu,  “ A Critical Comparative Study of Liver Patients from USA and INDIA: An Exploratory Analysis(May, 2012)”,  IJCSI International Journal of Computer Science Issues
+[1]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu,  " A Critical Comparative Study of Liver Patients from USA and INDIA: An Exploratory Analysis(May, 2012)",  IJCSI International Journal of Computer Science Issues
 
-[2]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu, “A Critical Study of Selected Classification Algorithms for Liver Disease Diagnosis.(May, 2011)”, IJCSI International Journal of Computer Science Issues
+[2]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu, "A Critical Study of Selected Classification Algorithms for Liver Disease Diagnosis.(May, 2011)", IJCSI International Journal of Computer Science Issues
 
-[3]. Bendi Venkata Ramana, M.Surendra Prasad Babu, B.R.Sarath Kumar, “New Automatic Diagnosis of Liver Status Using Bayesian Classification”(Nov, 2010), IEEE International Conference on Intelligent Network and Computing
+[3]. Bendi Venkata Ramana, M.Surendra Prasad Babu, B.R.Sarath Kumar, "New Automatic Diagnosis of Liver Status Using Bayesian Classification"(Nov, 2010), IEEE International Conference on Intelligent Network and Computing
 
-[4]. BUPA Liver Disorders Data Set. UCI Repository of Machine Learning Databases， Retrived from “https://archive.ics.uci.edu/ml/datasets/Liver+Disorders”. 
+[4]. BUPA Liver Disorders Data Set. UCI Repository of Machine Learning Databases, Retrived from "https://archive.ics.uci.edu/ml/datasets/Liver+Disorders". 
+[5]. F-Distribution Tables. (n.d.). Retrieved April 05, 2016, from "http://www.socr.ucla.edu/applets.dir/f_table.html"
+
+[6]. (n.d.). Retrieved April 05, 2016, from https://en.wikipedia.org/wiki/F-test 
+
+[7]. S. (2012). How To Calculate and Understand Analysis of Variance (ANOVA) F Test. Retrieved April 05, 2016, from "https://www.youtube.com/watch?v=-yQb_ZJnFXw".
+
+[8]. Statistical Soup: ANOVA, ANCOVA, MANOVA, & MANCOVA. (n.d.). Retrieved April 05, 2016, from "http://www.statsmakemecry.com/smmctheblog/stats-soup-anova-ancova-manova-mancova".
+
+[9]. Zaiontz, C. (n.d.). MANOVA Basic Concepts. Retrieved April 05, 2016, from "http://www.real-statistics.com/multivariate-statistics/multivariate-analysis-of-variance-manova/manova-basic-concepts/"
+
+[10]. 13.3 - Test Statistics for MANOVA. (n.d.). Retrieved April 05, 2016, from "https://onlinecourses.science.psu.edu/stat505/node/163"
 
 ## Appendix:
 
@@ -629,5 +640,3 @@ summary(Exp3_Manova4, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp3_Manova4, test="Roy", intercept = TRUE)
 
 ```
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true,processEnvironments: false, inlineMath: [ ['$','$'] ],displayMath: [['$$','$$'] ] },asciimath2jax: {delimiters: [ ['$','$'] ] }, "HTML-CSS": {minScaleAdjust: 125 } });</script>
