@@ -4,6 +4,9 @@ author: "huangjiushi"
 date: "2016-03-28"
 output: html_document
 ---
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 # IS4250 Health Care Analysis Report
  
  
@@ -109,11 +112,11 @@ $Y_ij$= Observation from subject j in group i
 $n_i$= Number of subjects in group i
 N = $n_1$ + $n_2$ + ... + $n_g$ = Total sample size
 
-$$\bar{y_i.} = \frac{1}{n_i} \sum_{j=1}^n_i Y_ij$$ = Sample mean for group i
-$$\bar{y_..} = \frac{1}{N} \sum_{i=1}^g \sum_{j=1}^n_i Y_ij$$= Grand mean
+$\bar{y_i.} = \frac{1}{n_i} \sum_{j=1}^n_i Y_ij$ = Sample mean for group i
+$\bar{y_..} = \frac{1}{N} \sum_{i=1}^g \sum_{j=1}^n_i Y_ij$= Grand mean
 
-Sum of squares between groups = $$\sum_{i=1}^g n_i (\bar{y_i.}-\bar{y_..})^2$$
-Sum of squares within groups = $$\sum_{i=1}^g \sum_{j=1}{n_i} (\bar{y_ij}-\bar{y_i.})^2$$
+Sum of squares between groups = $\sum_{i=1}^g n_i (\bar{y_i.}-\bar{y_..})^2$
+Sum of squares within groups = $\sum_{i=1}^g \sum_{j=1}{n_i} (\bar{y_ij}-\bar{y_i.})^2$
 
 Numerator degree of freedom = g - 1
 Denominator degree of freedom = N - g
