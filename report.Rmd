@@ -104,17 +104,17 @@ Where µ = group and k = number of groups. If the one-way ANOVA returns a signif
 there are at least 2 group means that are significantly different from each other.
 
 To test the null hypothesis, first the F-ratio need to be calculated. Suppose there are g groups:
-```{r}
-y[ij] = Observation from subject j in group i
-n[i] = Number of subjects in group i
-N = n[1] + n[2] + ... + n[g] = Total sample size
 
-bar(y[i.]) = frac(1,n[i])sum(Y[ij],j=1,n[i]) = Sample mean for group i
-bar(y[..]) = fram(1,N)sum(sum(Y[ij],j=1,n[i]),i=1,g) = Grand mean
- 
-Sum of squares between groups = sum(n[i](bar(y[i.])-bar(y[..]))^2,i=1,g)
-Sum of squares within groups = sum(sum((Y[ij]-bar(y[i.]))^2,j=1,n[i]),i=1,g)
-```
+$Y_ij$= Observation from subject j in group i
+$n_i$= Number of subjects in group i
+N = $n_1$ + $n_2$ + ... + $n_g$ = Total sample size
+
+$$\bar{y_i.} = \frac{1}{n_i} \sum_{j=1}^n_i Y_ij$$ = Sample mean for group i
+$$\bar{y_..} = \frac{1}{N} \sum_{i=1}^g \sum_{j=1}^n_i Y_ij$$= Grand mean
+
+Sum of squares between groups = $$\sum_{i=1}^g n_i (\bar{y_i.}-\bar{y_..})^2$$
+Sum of squares within groups = $$\sum_{i=1}^g \sum_{j=1}{n_i} (\bar{y_ij}-\bar{y_i.})^2$$
+
 Numerator degree of freedom = g - 1
 Denominator degree of freedom = N - g
 
