@@ -1,13 +1,3 @@
-<script type="text/javascript" 
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true, 
-        processEnvironments: false, inlineMath: [ ['$','$'] ], 
-        displayMath: [ ['$$','$$'] ] }, 
-        asciimath2jax: {delimiters: [ ['$','$'] ] }, 
-        "HTML-CSS": {minScaleAdjust: 125 } });
-    </script>
-    
 ---
 title: "report"
 author: "huangjiushi"
@@ -638,5 +628,13 @@ summary(Exp3_Manova4, test="Wilks", intercept = TRUE)
 summary(Exp3_Manova4, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp3_Manova4, test="Roy", intercept = TRUE)
 
-
 ```
+<script type="text/javascript" 
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true, 
+        processEnvironments: false, inlineMath: [ ['$','$'] ], 
+        displayMath: [ ['$$','$$'] ] }, 
+        asciimath2jax: {delimiters: [ ['$','$'] ] }, 
+        "HTML-CSS": {minScaleAdjust: 125 } });
+    </script>
