@@ -82,15 +82,19 @@ there are at least 2 group means that are significantly different from each othe
 
 To test the null hypothesis, first the F-ratio need to be calculated. Suppose there are g groups:
 
-$Y_ij$= Observation from subject j in group i
+$Y_{ij}$= Observation from subject j in group i
+
 $n_i$= Number of subjects in group i
+
 N = $n_1$ + $n_2$ + ... + $n_g$ = Total sample size
 
-$\bar{y_i.} = \frac{1}{n_i} \sum_{j=1}^n_i Y_ij$ = Sample mean for group i
-$\bar{y_..} = \frac{1}{N} \sum_{i=1}^g \sum_{j=1}^n_i Y_ij$= Grand mean
+$\bar{y_{i.}} = \frac{1}{n_i} \sum_{j=1}^n_i Y_{ij}$ = Sample mean for group i
 
-Sum of squares between groups = $\sum_{i=1}^g n_i (\bar{y_i.}-\bar{y_..})^2$
-Sum of squares within groups = $\sum_{i=1}^g \sum_{j=1}{n_i} (\bar{y_ij}-\bar{y_i.})^2$
+$\bar{y_{..}} = \frac{1}{N} \sum_{i=1}^g \sum_{j=1}^n_i Y_{ij}$= Grand mean
+
+Sum of squares between groups = $\sum_{i=1}^g n_i (\bar{y_{i.}}-\bar{y_{..}})^2$
+
+Sum of squares within groups = $\sum_{i=1}^g \sum_{j=1}{n_i} (\bar{y_{ij}}-\bar{y_{i.}})^2$
 
 Numerator degree of freedom = g - 1
 Denominator degree of freedom = N - g
@@ -201,7 +205,7 @@ summary(Anova_Exp1_SGOT)
 
 boxplot(SGOT$SGOT ~ SGOT$Location, main="ANOVA Test on SGOT for all Indian and the US Liver and Non-Liver Patients", xlab="Location", ylab="SGPT", col=rainbow(2))
 ```
-The fourth comparison is on the combination of Alkphos and SGPT using MANOVA. There are two groups of figures. We will focus on the GROUP figures which are related to our study. Within the GROUP figures, there are four test statistics for MANOVA, Pillai’s Trace, Wilks’ Lambda, Hotelling’s Trace, Roy’s Largest Root. We will decide whether to reject the null hypothesis based on these four test statistics. All four statistics show the 0.000 significance level. Hence we safely reject the null hypothesis and conclude that the difference between Indian patients and US patients on the mean value of Alkphos and SGPT exists.
+The fourth comparison is on the combination of Alkphos and SGPT using MANOVA. There are two groups of figures. We will focus on the GROUP figures which are related to our study. Within the GROUP figures, there are four test statistics for MANOVA, Pillai's Trace, Wilks' Lambda, Hotelling's Trace, Roy's Largest Root. We will decide whether to reject the null hypothesis based on these four test statistics. All four statistics show the 0.000 significance level. Hence we safely reject the null hypothesis and conclude that the difference between Indian patients and US patients on the mean value of Alkphos and SGPT exists.
 
 ```{r}
 Exp1_Alkphos_SGPT_India <- data.frame(cbind(India_Alkphos, India_SGPT,"India"))
