@@ -1,20 +1,21 @@
 ---
 title: "report"
 author: "huangjiushi"
-date: "2016年3月28日"
-output: html_document
+date: '2016-03-28'
+output: pdf_document
 ---
-IS4250 Health Care Analysis Report
+
+# IS4250 Health Care Analysis Report
  
  
-An Exploratory Analysis of Liver Patients from USA and INDIA
+# An Exploratory Analysis of Liver Patients from USA and INDIA
  
  
  
  
  
-Group 08: 	Huang Jiushi (A0105542R)
-            Ye Shujian (A0105702W)
+### Group 08: 	Huang Jiushi (A0105542R)
+###            Ye Shujian (A0105702W)
  
  
 
@@ -23,17 +24,17 @@ Group 08: 	Huang Jiushi (A0105542R)
  
 
  
-1.  Introduction
+## 1.  Introduction
 
-1.1  Background
+### 1.1  Background
 
 According to the World Health Organization (WHO) report published in 2014, the number of Liver Disease Deaths in India has reached 216,865 or 2.44% of total deaths. The age adjusted Death Rate is 21.96 per 100,000 of population which made Liver Disease become one of the top 10 causes of death in India. In order to improve the liver medical diagnosis accuracy rate, Prof Tekkali, from Aditya Institute of Technology and Management in India, performed several researches based on different data sets. Significant differences in classification accuracy of various classifiers with different data sets have been indicated. In order to envisage the reason for the difference between different data sets to further improve the diagnosis accuracy, an exploratory analysis was carried out.
  
-1.2  Project Objectives
+### 1.2  Project Objectives
 
 In order to improve the diagnosis efficiency, India is currently developing the automatic medical diagnosis system to instead the manual diagnosis methods. With the purpose of improving the system accuracy, the results of this study are expected to help the development of the automatic medical diagnosis system and the needs for its localization settings based on the geographical region.
  
-1.3  Data Set Introduction
+### 1.3  Data Set Introduction
 
 The study contains 2 data sets, taken from the University of California at Irvine (UCI) Machine Learning Repository and a local hospital in north east, Andhra Pradesh, India respectively. The reason why they choose one data set from USA and one from India is because significant differences within these two data sets are expected to be found due to the regional disparity, which will be helpful for the localization settings of the system.
  
@@ -92,18 +93,40 @@ Integer
 
 
 
-2.     Methodology
+## 2.     Methodology
  
 Standard statistical methods of One-way Analysis of Variance (ANOVA) and Multivariate Analysis of Variance (MANOVA) are applied to evaluate the significance between two data sets for better classification.
  
-2.1 One way Analysis of Variance (ANOVA)
+### 2.1 One way Analysis of Variance (ANOVA)
 
 ANOVA is a collection of statistical models used to analyze the differences in a single dependent variable among group means and their associated procedure. It will compare the means between the groups and determine whether any of those means are significantly different from each other. Specifically, it tests the null hypothesis:
 H0:  µ1 = µ2 = µ3 = … = µk
 Where µ = group and k = number of groups. If the one-way ANOVA returns a significant result, the alternative hypothesis will be accepted, which means that
 there are at least 2 group means that are significantly different from each other.
+
+To test the null hypothesis, first the F-ratio need to be calculated. Suppose there are g groups:
+
+$Y_ij$= Observation from subject j in group i
+$n_i$= Number of subjects in group i
+N = $n_1$ + $n_2$ + ... + $n_g$ = Total sample size
+
+$\bar{y_i.} = \frac{1}{n_i} \sum_{j=1}^n_i Y_ij$ = Sample mean for group i
+$\bar{y_..} = \frac{1}{N} \sum_{i=1}^g \sum_{j=1}^n_i Y_ij$= Grand mean
+
+Sum of squares between groups = $\sum_{i=1}^g n_i (\bar{y_i.}-\bar{y_..})^2$
+Sum of squares within groups = $\sum_{i=1}^g \sum_{j=1}{n_i} (\bar{y_ij}-\bar{y_i.})^2$
+
+Numerator degree of freedom = g - 1
+Denominator degree of freedom = N - g
+
+Mean square between group = Sum of squares between groups / Numerator degree of freedom
+Mean square within groups = Sum of squares within groups / Denominator degree of freedom
+
+F-ratio = Mean square between groups / Mean square within groups
+
+After calculating the F-ratio, the value of the F-ratio will be compared with the critical value of the F-ratio. The critical value of F-ratio can be found in the F-distribution tables using numerator degree of freedom and denominator degree of freedom. If the F-ratio is larger than the critical value of the F-ratio, the null hypothesis can be rejected.
  
-2.2 Multivariate Analysis of Variance (MANOVA)
+### 2.2 Multivariate Analysis of Variance (MANOVA)
 
 MANOVA is a technique to compare multivariate sample means. As a multivariate procedure, it is used when there are two or more dependent variables, and is typically followed by significance tests involving individual dependent variables separately. It can help find the relationship among the dependent variables and independent variables respectively. The purpose of the MANOVA is to look for an effect of one or more independent variables on several dependent variables at the same time
 
@@ -111,7 +134,7 @@ MANOVA is a technique to compare multivariate sample means. As a multivariate pr
 
 
 
-3. Results and Discussion
+## 3. Results and Discussion
 
 Three common attributes, SGOT, SGPT and Alkphos, exist between the US data set and India data set, and all of them are integer attributes. To show the significant differences between Indian liver patients and the US liver patients, these three common attributes will be the only measures.
 
@@ -145,7 +168,7 @@ Table 3: Experiment Comparisons Specifications
 
 The comparison on Alkphos in the first experiment will be taken as an example to elaborate ANOVA and the comparison on the combination of Alkphos and SGPT as an example to elaborate MANOVA. The rest of the comparisons in the first experiments as well as experiment 2 and 3 will be briefly discussed.
 
-3.1 Experiment 1
+### 3.1 Experiment 1
 
 For the first experiment, the sample will be all the records in the two data sets, which means both liver patients and non-liver patients are included in the experiment. 
 First ANOVA should be used to compare the US patients and Indian patients on Alkphos. The calculation results show that the mean of Alkphos of the US patients and Indian patients is 69.87 and 290.58 respectively. Then the sum of squares of Alkphos between the two groups (Indian patients and US patients) can be calculated as 10557739.946. The numerator degree of freedom is 1 and it is equal to number of groups minus 1. Hence, we can get the mean square between two groups which is 10557739.946 and it is equal to sum of squares between two groups divided by the numerator degree of freedom.
@@ -240,7 +263,7 @@ The fifth, sixth, and seventh comparison are on the combination of Alkphos and S
 
 From experiment 1 we find that there are significant differences on the mean value of either individual common attribute or all the possible combinations of the common attributes. The differences in the mean values suggest that there are significant differences between Indian and US patients.
 
-3.2 Experiment 2
+### 3.2 Experiment 2
 
 After showing that there are differences between general US and Indian patients, we want to find out whether there are differences between US and Indian liver patients. For experiment 2, we will choose liver patients in both US data set and Indian data set as the sample. We will still conduct seven comparisons for this experiment. There are 145 out of 345 liver patients in the US data set and 416 out of 583 liver patients in the Indian data set.
 
@@ -250,7 +273,7 @@ We use MANOVA for the rest of comparisons, which are the comparison on Alkphos &
 
 In conclusion, experiment 2 shows that there are significant differences between US and Indian liver patients. It is proved by the statistical differences between US and Indian liver patients’ data on their common attributes and the all combinations of their common attributes.
 
-3.3 Experiment 3
+### 3.3 Experiment 3
 
 For experiment 3, we want to find out whether there are significant differences between non-liver patients in US and India. 200 records in US data set are non-liver patients and 167 records in Indian data set are non-liver patients.
 
@@ -262,31 +285,31 @@ In conclusion, except the case of SGPT, experiment 3 shows that there are signif
 
 All the three experiments show the differences between US and Indian liver patients as well as the differences between US and Indian non-liver patients. This explains the existence of differences in classification accuracy when analyzing the US data set and Indian data set.
 
-4. Limitation
+## 4. Limitation
 
 Several limitations exist during the research. The analysis results may be affected due to these limitations. In order to get more accurate results, limitations should be specified for further improvement. During this study, the limitations should mainly include 3 areas, data size, common attributes and data preparation.
 
-4.1 Data Size
+### 4.1 Data Size
 
 One of the project goals is to adjust the localization settings of the automatic medical diagnosis system by finding the significant differences of two data sets from different countries. Both of the data sets only contain several hundred records, while India has over 1 billion population and the US has around 300 million. The sample size is not big enough to fully represent two countries. More data should be collected for further accuracy improvement. 
 
-4.2 Common Attributes
+### 4.2 Common Attributes
 
 The common attributes of the two data sets are Alkphos, SGPT and SGOT. These three attributes and their combinations are tested as the dependent variables, which means these attributes are considered as the main factors of the liver diseases. Actually, more attributes should be tested for the purpose of automatic medical diagnosis system development. In addition to Alkphos, SGPT and SGOT, 5' nucleotidase and gamma-glutamyl transpeptidase (GGT) are a few of the other enzymes located in the liver and should also be tested. So the attributes of data sets are too limited for the development of the system. More broad attributes should be collected for diagnosis accuracy improvements. 
 
-4.3 Data Preparation
+### 4.3 Data Preparation
 
 During the study, no data preparation is mentioned. Good data sets are the basises for the meaningful research outcome. Accurate and effective results can be achieved only when the input data are reliable. Before the study, outliers should be detected and removed. Furthermore, alphabetical attributes, like gender, should be further transformed into categorical type. All these should be done before the data analysis. 
 
 
 
-5. Conclusion
+## 5. Conclusion
 
 In this study, One-way Analysis of Variance (ANOVA) and Multivariate Analysis of Variance (MANOVA) are the two techniques used to examine the significant differences of the common attributes of the US and India data sets. Three experiments are performed. Both of the experiment 1 and 2 show that significant differences in the groups with all the possible attribute combinations exist. Only the analysis on SGPT of Experiment 3 indicates that there is no significant difference between groups on SGPT for non liver patients from the US and India, while other attributes and all combinations still exist the significance.  The results of the study confirm the difference in liver patients from the US and India, which is very important for the development of automatic medical diagnosis system and its localization settings according to different geographical regions.  Drugs for the liver patients from different locations should also be prescribed accordingly. 
 
 
 
-References:
+## References:
 
 [1]. Bendi Venkata Ramana, M.Surendra Prasad Babu, N.B.Venkateswarlu,  “ A Critical Comparative Study of Liver Patients from USA and INDIA: An Exploratory Analysis(May, 2012)”,  IJCSI International Journal of Computer Science Issues
 
@@ -296,9 +319,9 @@ References:
 
 [4]. BUPA Liver Disorders Data Set. UCI Repository of Machine Learning Databases， Retrived from “https://archive.ics.uci.edu/ml/datasets/Liver+Disorders”. 
 
-Appendix:
+## Appendix:
 
-Experiment 1-5: MANOVA Test of Alkphos & SGOT of All Liver and Non-Liver Patients
+### Experiment 1-5: MANOVA Test of Alkphos & SGOT of All Liver and Non-Liver Patients
 ```{r}
 Exp1_Alkphos_SGOT_India <- data.frame(cbind(India_Alkphos, India_SGOT, "India"))
 colnames(Exp1_Alkphos_SGOT_India) <- c("Alkphos", "SGOT", "Location")
@@ -316,7 +339,7 @@ summary(Exp1_Manova2, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp1_Manova2, test="Roy", intercept = TRUE)
 ```
 
-Experiment 1-6: MANOVA Test of SGOT & SGPT of All Liver and Non-Liver Patients
+### Experiment 1-6: MANOVA Test of SGOT & SGPT of All Liver and Non-Liver Patients
 ```{r}
 Exp1_SGPT_SGOT_India <- data.frame(cbind(India_SGPT, India_SGOT, "India"))
 colnames(Exp1_SGPT_SGOT_India) <- c("SGPT", "SGOT", "Location")
@@ -335,7 +358,7 @@ summary(Exp1_Manova3, test="Roy", intercept = TRUE)
 ```
 
 
-Experiment 1-7: MANOVA Test of Alkphos, SGPT, SGOT of All Liver and Non-Liver Patients
+### Experiment 1-7: MANOVA Test of Alkphos, SGPT, SGOT of All Liver and Non-Liver Patients
 ```{r}
 Exp1_Alkphos_SGPT_SGOT_India <- data.frame(cbind(India_Alkphos, India_SGPT, India_SGOT, "India"))
 colnames(Exp1_Alkphos_SGPT_SGOT_India) <- c("Alkphos", "SGPT", "SGOT", "Location")
@@ -353,7 +376,7 @@ summary(Exp1_Manova4, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp1_Manova4, test="Roy", intercept = TRUE)
 ```
 
-Experiment 2-1: ANOVA Test on Alkphos of all Liver Patients
+### Experiment 2-1: ANOVA Test on Alkphos of all Liver Patients
 ```{r}
 India_Liver_SGPT <- sqldf("SELECT SGPT FROM india WHERE Selector = 1")
 India_Liver_SGOT <- sqldf("SELECT SGOT FROM india WHERE Selector = 1")
@@ -378,7 +401,7 @@ boxplot(Liver_Alkphos$Alkphos ~ Liver_Alkphos$Location, main="ANOVA Test on Alkp
 ```
 
 
-Experiment 2-2 ANOVA Test on SGPT for All Liver Patients
+### Experiment 2-2 ANOVA Test on SGPT for All Liver Patients
 ```{r}
 India_Liver_SGPT2 <- data.frame(cbind(India_Liver_SGPT, "India"))
 colnames(India_Liver_SGPT2) <- c("SGPT", "Location")
@@ -394,7 +417,7 @@ summary(Exp2_Anova_SGPT)
 boxplot(Liver_SGPT$SGPT ~ Liver_SGPT$Location, main="ANOVA Test on SGPT for all liver patients", xlab="Location", ylab="SGPT", col=rainbow(2))
 ```
 
-Experiment 2-3 ANOVA Test on SGOT for All Liver Patients
+### Experiment 2-3 ANOVA Test on SGOT for All Liver Patients
 ```{r}
 India_Liver_SGOT2 <- data.frame(cbind(India_Liver_SGOT, "India"))
 colnames(India_Liver_SGOT2) <- c ("SGOT", "Location")
@@ -411,7 +434,7 @@ boxplot(Liver_SGOT$SGOT ~ Liver_SGOT$Location, main="ANOVA Test on SGOT for all 
 ```
 
 
-Experiment 2-4 MANOVA Test on Alkphos & SGPT for All Liver Patients
+### Experiment 2-4 MANOVA Test on Alkphos & SGPT for All Liver Patients
 ```{r}
 Exp2_Alkphos_SGPT_India <- data.frame(cbind(India_Liver_Alkphos, India_Liver_SGPT, "India"))
 colnames(Exp2_Alkphos_SGPT_India) <- c("Alkphos", "SGPT", "Location")
@@ -429,7 +452,7 @@ summary(Exp2_Manova1, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp2_Manova1, test="Roy", intercept = TRUE)
 ```
 
-Experiment 2-5 MANOVA Test on Alkphos & SGOT for All Liver Patients
+### Experiment 2-5 MANOVA Test on Alkphos & SGOT for All Liver Patients
 ```{r}
 Exp2_Alkphos_SGOT_India <- data.frame(cbind(India_Liver_Alkphos, India_Liver_SGOT, "India"))
 colnames(Exp2_Alkphos_SGOT_India) <- c("Alkphos", "SGOT", "Location")
@@ -446,7 +469,7 @@ summary(Exp2_Manova2, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp2_Manova2, test="Roy", intercept = TRUE)
 ```
 
-Experiment 2-6 MANOVA Test on SGOT & SGPT for All Liver Patients
+### Experiment 2-6 MANOVA Test on SGOT & SGPT for All Liver Patients
 ```{r}
 Exp2_SGOT_SGPT_India <- data.frame(cbind(India_Liver_SGOT, India_Liver_SGPT, "India"))
 colnames(Exp2_SGOT_SGPT_India) <- c("SGOT", "SGPT", "Location")
@@ -463,7 +486,7 @@ summary(Exp2_Manova3, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp2_Manova3, test="Roy", intercept = TRUE)
 ```
 
-Experiment 2-7 MANOVA Test on Alkphos $ SGOT & SGPT for All Liver Patients
+### Experiment 2-7 MANOVA Test on Alkphos $ SGOT & SGPT for All Liver Patients
 ```{r}
 Exp2_Alkphos_SGPT_SGOT_India <- data.frame(cbind(India_Liver_Alkphos, India_Liver_SGPT, India_Liver_SGOT, "India"))
 colnames(Exp2_Alkphos_SGPT_SGOT_India) <- c("Alkphos", "SGPT", "SGOT", "Location")
@@ -481,7 +504,7 @@ summary(Exp2_Manova4, test="Roy", intercept = TRUE)
 ```
 
 
-Experiment 3-1: ANOVA Test on Alkphos of all Non-Liver Patients
+### Experiment 3-1: ANOVA Test on Alkphos of all Non-Liver Patients
 ```{r}
 India_NonLiver_SGPT <- sqldf("SELECT SGPT FROM india WHERE Selector = 2")
 India_NonLiver_SGOT <- sqldf("SELECT SGOT FROM india WHERE Selector = 2")
@@ -506,7 +529,7 @@ boxplot(NonLiver_Alkphos$Alkphos ~ NonLiver_Alkphos$Location, main="ANOVA Test o
 ```
 
 
-Experiment 3-2 ANOVA Test on SGPT for All Non-Liver Patients
+### Experiment 3-2 ANOVA Test on SGPT for All Non-Liver Patients
 ```{r}
 India_NonLiver_SGPT2 <- data.frame(cbind(India_NonLiver_SGPT, "India"))
 colnames(India_NonLiver_SGPT2) <- c("SGPT", "Location")
@@ -523,7 +546,7 @@ boxplot(NonLiver_SGPT$SGPT ~ NonLiver_SGPT$Location, main="ANOVA Test on SGPT fo
 
 ```
 
-Experiment 3-3 ANOVA Test on SGOT for All Non-Liver Patients
+### Experiment 3-3 ANOVA Test on SGOT for All Non-Liver Patients
 ```{r}
 India_NonLiver_SGOT2 <- data.frame(cbind(India_NonLiver_SGOT, "India"))
 colnames(India_NonLiver_SGOT2) <- c("SGOT", "Location")
@@ -540,7 +563,7 @@ boxplot(NonLiver_SGOT$SGOT ~ NonLiver_SGOT$Location, main="ANOVA Test on SGOT fo
 ```
 
 
-Experiment 3-4 MANOVA Test on Alkphos & SGPT for All Non-Liver Patients
+### Experiment 3-4 MANOVA Test on Alkphos & SGPT for All Non-Liver Patients
 ```{r}
 Exp3_Alkphos_SGPT_India_Non <- data.frame(cbind(India_NonLiver_Alkphos, India_NonLiver_SGPT, "India"))
 colnames(Exp3_Alkphos_SGPT_India_Non) <- c("Alkphos", "SGPT", "Location")
@@ -555,7 +578,7 @@ summary(Exp3_Manova1, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp3_Manova1, test="Roy", intercept = TRUE)
 ```
 
-Experiment 3-5 MANOVA Test on Alkphos & SGOT for All Non-Liver Patients
+### Experiment 3-5 MANOVA Test on Alkphos & SGOT for All Non-Liver Patients
 ```{r}
  Exp3_Alkphos_SGOT_India_Non <- data.frame(cbind(India_NonLiver_Alkphos, India_NonLiver_SGOT, "India"))
 colnames(Exp3_Alkphos_SGOT_India_Non) <- c("Alkphos", "SGOT", "Location")
@@ -572,7 +595,7 @@ summary(Exp3_Manova2, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp3_Manova2, test="Roy", intercept = TRUE)
 ```
 
-Experiment 3-6 MANOVA Test on SGPT & SGOT for All Non-Liver Patients
+### Experiment 3-6 MANOVA Test on SGPT & SGOT for All Non-Liver Patients
 ```{r}
 Exp3_SGPT_SGOT_India_Non <- data.frame(cbind(India_NonLiver_SGPT, India_NonLiver_SGOT, "India"))
 colnames(Exp3_SGPT_SGOT_India_Non) <- c("SGPT", "SGOT", "Location")
@@ -589,7 +612,7 @@ summary(Exp3_Manova3, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp3_Manova3, test="Roy", intercept = TRUE)
 ```
 
-Experiment 3-7 MANOVA Test on Alkphos & SGPT & SGOT for All Non-Liver Patients
+### Experiment 3-7 MANOVA Test on Alkphos & SGPT & SGOT for All Non-Liver Patients
 ```{r}
 Exp3_Alkphos_SGPT_SGOT_India_Non <- data.frame(cbind(India_NonLiver_Alkphos, India_NonLiver_SGPT, India_NonLiver_SGOT, "India"))
 colnames(Exp3_Alkphos_SGPT_SGOT_India_Non) <- c("Alkphos", "SGPT", "SGOT", "Location")
@@ -605,5 +628,6 @@ summary(Exp3_Manova4, test="Wilks", intercept = TRUE)
 summary(Exp3_Manova4, test="Hotelling-Lawley", intercept = TRUE)
 summary(Exp3_Manova4, test="Roy", intercept = TRUE)
 
-
 ```
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript">MathJax.Hub.Config({tex2jax: {processEscapes: true,processEnvironments: false, inlineMath: [ ['$','$'] ],displayMath: [['$$','$$'] ] },asciimath2jax: {delimiters: [ ['$','$'] ] }, "HTML-CSS": {minScaleAdjust: 125 } });</script>
